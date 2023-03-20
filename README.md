@@ -24,7 +24,6 @@ Overall, TIBCO BusinessWorks custom functions provide a flexible and powerful wa
   - [Custom String Functions](#custom-string-functions)
   - [Custom String Functions Brazil](#custom-string-functions-brazil)
 - [Install](#install)
-  - [Basic](#basic)
 - [Uninstall](#uninstall)
   - [Windows & Linux](#windows-linux)
   - [MacOS](#macos) 
@@ -245,8 +244,12 @@ By the end of this section, you should have a clear understanding of the availab
 
 ## Install
 
-1 - Clone this repository:  gh repo clone jgimenes/bw6-custom-functions<br/>
-2 - Import the project in your workspace.
+Open a terminal and run the following command: `gh repo clone jgimenes/bw6-custom-functions`. This will clone the repository to your local machine.<br/>
+To import the project, open your TIBCO BusinessStudio Integrated Development Environment (IDE) and follow the steps below.
+2 - Import the project in your workspace.<br />
+3 - Over the **"Project Explorer"**, right click with mouse and select **"Import"**.<br />
+4 - Select **"Projects From Folder or Archive"** and click **"Next".<br />
+5 - On the **"Import Source"** put the path name for clonned sources.
 
 [TIBCO](https://docs.tibco.com/pub/activematrix_businessworks/6.9.0/doc/html/Default.htm#binding-palette/using-custom-xpath-f.htm?Highlight=custom%20functions) - Using Custom XPath Function at Design Time and Run Time.
 
