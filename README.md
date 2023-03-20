@@ -245,7 +245,7 @@ By the end of this section, you should have a clear understanding of the availab
 
 ## Install
 
-1 - Clone this repository: <br/>
+1 - Clone this repository:  gh repo clone jgimenes/bw6-custom-functions<br/>
 2 - Import the project in your workspace.
 
 [TIBCO](https://docs.tibco.com/pub/activematrix_businessworks/6.9.0/doc/html/Default.htm#binding-palette/using-custom-xpath-f.htm?Highlight=custom%20functions) - Using Custom XPath Function at Design Time and Run Time.
