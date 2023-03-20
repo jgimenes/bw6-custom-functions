@@ -14,7 +14,7 @@ import com.tibco.xml.cxf.common.annotations.XPathFunctionParameter;
  * 
  */
 
-@XPathFunctionGroup(category = "Custom String Functions - Brasil", prefix = "br", namespace = "http://tibco.bw.StringToolsBr", helpText = "Brazil - Custom-built functions for manipulating strings.")
+@XPathFunctionGroup(category = "Custom String Functions - Brazil", prefix = "br", namespace = "http://tibco.bw.StringToolsBr", helpText = "Custom-built functions for manipulating strings - Brazil.")
 public class StringUtilsBr {
 
 	/**
@@ -26,7 +26,7 @@ public class StringUtilsBr {
 	 * 
 	 */
 
-	@XPathFunction(helpText = "Returns the ZIP code in a standardized 99999-999 format", parameters = {
+	@XPathFunction(helpText = "Returns the ZIP code in a standardized 99999-999 format.", parameters = {
 			@XPathFunctionParameter(name = "zipCode", optional = false, optionalValue = "") }, displayName = "zip-code-format", returnType = "string", examples = {
 					@XPathFunctionExample(example = "format-zip-code(\"99999999\")", returns = "99999-999") })
 
@@ -52,9 +52,9 @@ public class StringUtilsBr {
 	 * 
 	 */
 
-	@XPathFunction(helpText = "Returns the CNPJ number in a standardized 99.999.999/9999-99 format", parameters = {
+	@XPathFunction(helpText = "Returns the CNPJ number in a standardized 99.999.999/9999-99 format.", parameters = {
 			@XPathFunctionParameter(name = "CNPJ", optional = false, optionalValue = "") }, displayName = "cnpj-formart", returnType = "string", examples = {
-					@XPathFunctionExample(example = "format-cnpj(\"78408074000159\")", returns = "78.408.074/0001-59") })
+					@XPathFunctionExample(example = "cnpj-formart(\"78408074000159\")", returns = "78.408.074/0001-59") })
 
 	public String formatCNPJ(String cnpjNumber) {
 		cnpjNumber = textNormalizer.normalizeText(cnpjNumber).trim();
@@ -113,7 +113,7 @@ public class StringUtilsBr {
 	 * 
 	 */
 
-	@XPathFunction(helpText = "Returns the CPF number in a standardized 999.999.999-99 format", parameters = {
+	@XPathFunction(helpText = "Returns the CPF number in a standardized 999.999.999-99 format.", parameters = {
 			@XPathFunctionParameter(name = "CPF", optional = false, optionalValue = "") }, displayName = "cpf-formart", returnType = "string", examples = {
 					@XPathFunctionExample(example = "cpf-format(\"88107069005\")", returns = "881.070.690-05") })
 

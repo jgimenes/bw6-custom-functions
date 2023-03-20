@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension
+         id="CustomStringFunctionsDateTime"
+         name="CustomStringFunctionsDateTime"
+         point="com.tibco.xml.cxf.common.customXPathFunction">
+      <customXPathFunctionGroup
+            class="br.com.jgimenes.bw.customfunctions.DateTimeUtils"
+            id="customdatetimefunctions">
+      </customXPathFunctionGroup>
+   </extension>
 
    <extension
          id="CustomStringFunctions"
          name="CustomStringFunctions"
          point="com.tibco.xml.cxf.common.customXPathFunction">
       <customXPathFunctionGroup
-            id="customfunctions"
+            id="customstringfunctions"
             class="br.com.jgimenes.bw.customfunctions.StringUtils">
       </customXPathFunctionGroup>
    </extension>
    <extension
-         id="CustomStringFunctionsBr"
-         name="CustomStringFunctionsBr"
+         id="CustomStringFunctionsStringBr"
+         name="CustomStringFunctionsStringBr"
          point="com.tibco.xml.cxf.common.customXPathFunction">
       <customXPathFunctionGroup
             class="br.com.jgimenes.bw.customfunctions.StringUtilsBr"
-            id="customfunctionsbr">
+            id="customstringfunctionsbr">
       </customXPathFunctionGroup>
    </extension>
 

@@ -57,7 +57,7 @@ public class StringUtils {
 	 * 
 	 */
 
-	@XPathFunction(helpText = "Obtain the line count for a given string", parameters = {
+	@XPathFunction(helpText = "Obtain the line count for a given string.", parameters = {
 			@XPathFunctionParameter(name = "string-text", optional = false, optionalValue = "") }, displayName = "count-lines", returnType = "integer", examples = {
 					@XPathFunctionExample(example = "count-lines(\"first line. \nsecond line.\")", returns = "2") })
 
@@ -76,7 +76,7 @@ public class StringUtils {
 
 	@XPathFunction(helpText = "Reverse string.", parameters = {
 			@XPathFunctionParameter(name = "string-text", optional = false, optionalValue = "") }, displayName = "string-reverse", returnType = "string", examples = {
-					@XPathFunctionExample(example = "string-reverse(\"love\")", returns = "evol") })
+					@XPathFunctionExample(example = "string-reverse(\"all you need is love\")", returns = "evol si deen uoy lla") })
 
 	public String reverseString(String stringText) {
 		return new StringBuilder(stringText).reverse().toString();
@@ -93,7 +93,7 @@ public class StringUtils {
 
 	@XPathFunction(helpText = "Mask credit card number.", parameters = {
 			@XPathFunctionParameter(name = "credit-card-number", optional = false, optionalValue = "") }, displayName = "mask-credit-card", returnType = "string", examples = {
-					@XPathFunctionExample(example = "string-reverse(\"5348 0866 2159 5908\")", returns = "5***********5908") })
+					@XPathFunctionExample(example = "mask-credit-card(\"5348 0866 2159 5908\")", returns = "5***********5908") })
 
 	public String maskCreditCard(String creditCardNumber) {
 		creditCardNumber = textNormalizer.normalizeText(creditCardNumber);
@@ -102,7 +102,7 @@ public class StringUtils {
 
 	/**
 	 * 
-	 * Obtain the word count for a given string.
+	 * Obtain the words count for a given string.
 	 * 
 	 * @param stringText
 	 * @return words number
@@ -131,7 +131,7 @@ public class StringUtils {
 	@XPathFunction(helpText = "Takes a string and formats it based on a given mask.", parameters = {
 			@XPathFunctionParameter(name = "string-text", optional = false, optionalValue = ""),
 			@XPathFunctionParameter(name = "mask", optional = false, optionalValue = "") }, displayName = "mask-formatter", returnType = "string", examples = {
-					@XPathFunctionExample(example = "mask-formatter(\"999999999\", \"+55 11 #####-####\" )", returns = "\"+55 11 99999-9999\"") })
+					@XPathFunctionExample(example = "mask-formatter(\"999999999\", \"+55 11 #####-####\" )", returns = "+55 11 99999-9999") })
 
 	public String maskFormatter(String stringText, String mask) {
 		return textFormatter.textFormat(stringText, mask);
@@ -147,16 +147,16 @@ public class StringUtils {
 	 */
 
 	@XPathFunction(helpText = "Convert accented characters to non-accented characters in a string.", parameters = {
-			@XPathFunctionParameter(name = "string-text", optional = false, optionalValue = "") }, displayName = "remove-accent", returnType = "string", examples = {
-					@XPathFunctionExample(example = "remove-accent(\"áàâãç\")", returns = "\"aaaac\"") })
+			@XPathFunctionParameter(name = "string-text", optional = false, optionalValue = "") }, displayName = "remove-accents", returnType = "string", examples = {
+					@XPathFunctionExample(example = "remove-accents(\"áàâãç\")", returns = "aaaac") })
 
-	public String removeAccent(String stringText) {
+	public String removeAccents(String stringText) {
 		return textNormalizer.removeAccents(stringText);
 	}
 
 	@XPathFunction(helpText = "Cleans a string by removing all non-alphanumeric characters and keeping only letters and numbers.", parameters = {
 			@XPathFunctionParameter(name = "string-text", optional = false, optionalValue = "") }, displayName = "normalize-string", returnType = "string", examples = {
-					@XPathFunctionExample(example = "normalize-string(\"a|b-c*d%e$f&g\")", returns = "\"abcdefg\"") })
+					@XPathFunctionExample(example = "normalize-string(\"a|b-c*d%e$f&g\")", returns = "abcdefg") })
 
 	public String normailzeString(String stringText) {
 		return textNormalizer.normalizeText(stringText);

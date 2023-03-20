@@ -35,16 +35,16 @@ public class DateTimeUtils {
 	 */
 
 	@XPathFunction(helpText = "Convert Epoch time to a readable date format.", parameters = {
-			@XPathFunctionParameter(name = "timestamp", optional = false, optionalValue = "")},
-			examples = {@XPathFunctionExample(example = "", returns = "")}
-			)
+			@XPathFunctionParameter(name = "timestamp", optional = false, optionalValue = "") }, displayName = "epoch-to-human-readable", returnType = "string", examples = {
+					@XPathFunctionExample(example = "epoch-to-human-readable(\"1679332277\")", returns = "2023-03-20T14:11:17.017-03:00") } 
+	)
 
 	public static String epochToHumanReadable(String timestamp) {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sssXXX");
 		formatter.setTimeZone(TimeZone.getDefault());
-		long epoch = Long.parseLong(timestamp);
-		Date date = new Date(epoch);
+		Long epoch = Long.parseLong(timestamp);
+		Date date = new Date( timestamp.length() == 10 ? epoch * 1000 : epoch );
 		return formatter.format(date);
 	}
 
@@ -56,20 +56,20 @@ public class DateTimeUtils {
 	 * @return epoch
 	 * 
 	 */
-	
+
 	@XPathFunction(helpText = "Convert a readable date format to an Epoch timestamp.", parameters = {
-			@XPathFunctionParameter(name = "timestamp", optional = false, optionalValue = "")},
-			examples = {@XPathFunctionExample(example = "", returns = "")})
+			@XPathFunctionParameter(name = "datetime", optional = false, optionalValue = "") }, displayName = "human-readable-to-epoch", returnType = "string", examples = {
+					@XPathFunctionExample(example = "human-readable-to-epoch(\"2023-03-16T16:43:30.030-03:00\")", returns = "true") })
 
 	public static String humanReadableToEpoch(String datetime) {
 
 		LocalDateTime localDateTime = LocalDateTime.parse(datetime, DateTimeFormatter.ISO_DATE_TIME);
 		ZonedDateTime LocalDateTimeZone = localDateTime.atZone(ZoneId.systemDefault());
-		long epoch = LocalDateTimeZone.toEpochSecond() * 1000;
+		long epoch = LocalDateTimeZone.toEpochSecond();
 		return String.valueOf(epoch);
 
 	}
-	
+
 	/**
 	 * 
 	 * Retrieves the day number within a year for a given date.
@@ -80,9 +80,9 @@ public class DateTimeUtils {
 	 */
 
 	@XPathFunction(helpText = "Retrieves the day number within a year for a given date.", parameters = {
-			@XPathFunctionParameter(name = "date", optional = false, optionalValue = "")}, 
-			examples = {@XPathFunctionExample(example = "", returns = "")} )
-	
+			@XPathFunctionParameter(name = "date", optional = false, optionalValue = "") }, displayName = "extract-day-of-year", returnType = "integer", examples = {
+					@XPathFunctionExample(example = "extract-day-of-year(\"2023-12-31\")", returns = "365") })
+
 	public static int extractDayOfYear(String date) {
 		return extractFromDateOfYear("day", date);
 	}
@@ -94,6 +94,10 @@ public class DateTimeUtils {
 	 * @return month number of year
 	 * 
 	 */
+
+	@XPathFunction(helpText = "Retrieves the week number within a year for a given date.", parameters = {
+			@XPathFunctionParameter(name = "date", optional = false, optionalValue = "") }, displayName = "extract-week-of-year", returnType = "integer", examples = {
+					@XPathFunctionExample(example = "extract-week-of-year(\"2023-12-31\")", returns = "53") })
 
 	public static int extractWeekOfYear(String date) {
 		return extractFromDateOfYear("week", date);
@@ -107,7 +111,6 @@ public class DateTimeUtils {
 	 * @return integer
 	 * 
 	 */
-
 
 	private static int extractFromDateOfYear(String query, String date) {
 
