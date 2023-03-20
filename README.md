@@ -214,7 +214,7 @@ By the end of this section, you should have a clear understanding of the availab
 
       ##### Example:
 
-          Input: su:cnpj-validade("78408074000150")
+          Input: br:cnpj-validade("78408074000150")
           Return: false
 
    - #### cpf-validate()
@@ -229,7 +229,7 @@ By the end of this section, you should have a clear understanding of the availab
 
       ##### Example:
 
-          Input: su:cpf-validade("44715595080")
+          Input: br:cpf-validade("44715595080")
           Return: false
 
     - #### zip-code-format() 
