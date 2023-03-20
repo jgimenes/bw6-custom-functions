@@ -22,12 +22,13 @@ Overall, TIBCO BusinessWorks custom functions provide a flexible and powerful wa
 - [Functions](#functions)
   - [Custom Date Time Functions](#custom-date-time-functions)
   - [Custom String Functions](#custom-string-functions)
+  - [Custom String Functions Brazil](#custom-string-functions-brazil)
 - [Install](#install)
   - [Basic](#basic)
 - [Uninstall](#uninstall)
   - [Windows & Linux](#windows-linux)
   - [MacOS](#macos) 
-- [MIT Licence](#licence)
+- [MIT Licence](#mit-licence)
 
 ## Functions
 This section provides an overview of the available custom functions and explains how to use them in your integration projects. 
@@ -178,7 +179,7 @@ By the end of this section, you should have a clear understanding of the availab
           Input: su:validade-email("user")
           Return: false
 
-- ### Custom String Functions - Brazil
+- ### Custom String Functions Brazil
   Custom-built functions for manipulating strings - Brazil.
   
     - #### cnpj-formart() 
@@ -243,7 +244,11 @@ By the end of this section, you should have a clear understanding of the availab
 
 
 ## Install
-...
+
+1 - Clone this repository: <br/>
+2 - Import the project in your workspace.
+
+[TIBCO](https://docs.tibco.com/pub/activematrix_businessworks/6.9.0/doc/html/Default.htm#binding-palette/using-custom-xpath-f.htm?Highlight=custom%20functions) - Using Custom XPath Function at Design Time and Run Time.
 
 ## Uninstall
 
