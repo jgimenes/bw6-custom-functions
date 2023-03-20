@@ -143,7 +143,105 @@ By the end of this section, you should have a clear understanding of the availab
           Input: su:normalize-string("a|b-c*d%e$f&g")
           Return: abcdefg
 
+    - #### remove-accents() 
+      **Description:** Convert accented characters to non-accented characters in a string.<br />
+      **Template:** remove-accents(<< string-text >>)<br />
+      **Return Type:** string
     
+      ##### Example:
+
+          Input: su:remove-accents("áàâãç")
+          Return: aaac
+
+    - #### string-reverse() 
+      **Description:** Reverse string.<br />
+      **Template:** string-reverse(<< string-text >>)<br />
+      **Return Type:** string
+    
+      ##### Example:
+
+          Input: su:string-reverse("all you need is love")
+          Return: evol si deen uoy lla
+
+    - #### validade-email() 
+      **Description:** Check the validity of an email address using regular expressions.<br />
+      **Template:** validade-email(<< email >>)<br />
+      **Return Type:** boolean
+    
+      ##### Example:
+
+          Input: su:validade-email("user@email.com")
+          Return: true
+
+      ##### Example:
+
+          Input: su:validade-email("user")
+          Return: false
+
+- ### Custom String Functions - Brazil
+  Custom-built functions for manipulating strings - Brazil.
+  
+    - #### cnpj-formart() 
+      **Description:** Returns the CNPJ number in a standardized 99.999.999/9999-99 format.<br />
+      **Template:** cnpj-formart(<< CNPJ >>)<br />
+      **Return Type:** string
+    
+      ##### Example:
+
+          Input: br:cnpj-format("78408074000159")
+          Return: 78.408.074/0001-59
+
+    - #### cpf-formart() 
+      **Description:** Returns the CPF number in a standardized 999.999.999-99 format.<br />
+      **Template:** cpf-formart(<< CPF >>)<br />
+      **Return Type:** string
+    
+      ##### Example:
+
+          Input: br:cpf-format("88107069005")
+          Return: 881.070.690-05
+
+    - #### cnpj-validate()
+      **Description:** Validates a Brazilian CNPJ number.<br />
+      **Template:** cnpj-validate(<< CNPJ >>)<br />
+      **Return Type:** boolean
+    
+      ##### Example:
+
+          Input: br:cnpj-validade("78408074000159")
+          Return: true
+
+      ##### Example:
+
+          Input: su:cnpj-validade("78408074000150")
+          Return: false
+
+   - #### cpf-validate()
+      **Description:** Validates a Brazilian CPF number.<br />
+      **Template:** cpf-validate(<< CPF >>)<br />
+      **Return Type:** boolean
+    
+      ##### Example:
+
+          Input: br:cpf-validade("44715595087")
+          Return: true
+
+      ##### Example:
+
+          Input: su:cpf-validade("44715595080")
+          Return: false
+
+    - #### zip-code-format() 
+      **Description:** Returns the ZIP code in a standardized 99999-999 format.<br />
+      **Template:** zip-code-format(<< zipCode >>)<br />
+      **Return Type:** string
+    
+      ##### Example:
+
+          Input: br:zip-code-format("11750000")
+          Return: 11750-000
+
+
 ## Install
 ...
 
