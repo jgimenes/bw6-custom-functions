@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" factory="com.tibco.xml.cxf.user.http_tibco.bw.CustomStringFunctions__string_utils" name="cxf.user.http_tibco.bw.CustomStringFunctions_string_utils">
+   <implementation class="br.com.jgimenes.bw.customfunctions.StringUtils"/>
+</scr:component>

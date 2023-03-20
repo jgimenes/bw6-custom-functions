@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Custom Functions TIBCO BusinessWorks 6/CE
+Bundle-SymbolicName: bw6-custom-functions;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Julio Gimenes (jgimenes@gmail.com)
+Export-Package: br.com.jgimenes.bw.customfunctions
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Service-Component: OSGI-INF/string_utils_cxf.xml, OSGI-INF/string_utils_br_cxf.xml
+Import-Package: com.tibco.xml.cxf.common.annotations
+Automatic-Module-Name: CustomFunctions
+Bundle-ActivationPolicy: lazy
