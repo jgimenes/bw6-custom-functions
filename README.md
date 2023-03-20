@@ -29,7 +29,6 @@ Overall, TIBCO BusinessWorks custom functions provide a flexible and powerful wa
   - [MacOS](#macos) 
 - [MIT Licence](#licence)
 
-
 ## Functions
 This section provides an overview of the available custom functions and explains how to use them in your integration projects. 
 
@@ -45,13 +44,15 @@ By the end of this section, you should have a clear understanding of the availab
     **Template:** epoch-to-human-readable(<< timestamp >>)<br />
     **Return Type:** string
     
-      ##### Examples:
+      ##### Example:
 
-      **Input:** dt:epoch-to-human-readable("1679332277")<br />
-      **Return:** 2023-03-20T14:11:17.017-03:00
-
-      **Input:** dt:epoch-to-human-readable(xsd:string(tib:timestamp()))<br />
-      **Return:** 2023-03-20T14:39:40.040-03:00
+        Input: dt:epoch-to-human-readable("1679332277")<br />
+        Return: 2023-03-20T14:11:17.017-03:00
+      
+      ##### Example:  
+      
+        Input: dt:epoch-to-human-readable(xsd:string(tib:timestamp()))<br />
+        Return: 2023-03-20T14:39:40.040-03:00
       
   - #### extract-day-of-year() 
     **Description:** Retrieves the day number within a year for a given date.<br />
@@ -60,8 +61,8 @@ By the end of this section, you should have a clear understanding of the availab
     
       ##### Example:
 
-      **Input:** dt:extract-day-of-year("2023-12-31")<br />
-      **Return:** 365
+        Input: dt:extract-day-of-year("2023-12-31")<br />
+        Return: 365
 
   - #### extract-week-of-year() 
     **Description:** Retrieves the week number within a year for a given date.<br />
@@ -70,8 +71,8 @@ By the end of this section, you should have a clear understanding of the availab
     
       ##### Example:
 
-      **Input:** dt:extract-week-of-year("2023-12-31")<br />
-      **Return:** 53
+        Input: dt:extract-week-of-year("2023-12-31")<br />
+        Return: 53
 
   - #### epoch-to-human-readable() 
     **Description:** Convert a readable date format to an Epoch timestamp.<br />
@@ -80,14 +81,69 @@ By the end of this section, you should have a clear understanding of the availab
     
       ##### Examples:
 
-      **Input:** dt:human-readable-to-epoch("2023-03-20T14:11:17.017-03:00")<br />
-      **Return:** 1679332277
+        Input: dt:human-readable-to-epoch("2023-03-20T14:11:17.017-03:00")<br />
+        Return: 1679332277
 
-      **Input:** dt:human-readable-to-epoch(xsd:string(current-dateTime()))<br />
-      **Return:** 1679336875
+      ##### Examples:
+
+        Input: dt:human-readable-to-epoch(xsd:string(current-dateTime()))<br />
+        Return: 1679336875
 
 - ### Custom String Functions
+  Custom-built functions for manipulating strings.
+  
+    - #### count-lines() 
+      **Description:** Obtain the line count for a given string.<br />
+      **Template:** count-lines(<< string-text >>)<br />
+      **Return Type:** integer
+    
+      ##### Example:
 
+          Input: su:count-lines("first line. 
+                                second line.")
+          Return: 2
+
+    - #### count-words() 
+      **Description:** Obtain the words count for a given string.<br />
+      **Template:** count-words(<< string-text >>)<br />
+      **Return Type:** integer
+    
+      ##### Example:
+
+          Input: su:count-words("word1 word2 word3 word4")
+          Return: 4
+
+    - #### mask-credit-card() 
+      **Description:** Mask credit card number.<br />
+      **Template:** mask-credit-card(<< credit-card-number >>)<br />
+      **Return Type:** string
+    
+      ##### Example:
+
+          Input: su:mask-credit-card("5348 0866 2159 5908")
+          Return: 5***********5908
+
+    - #### mask-formatter() 
+      **Description:** Takes a string and formats it based on a given mask.<br />
+      **Template:** mask-formatter(<< string-text >>, << mask >>)<br />
+      **Return Type:** string
+    
+      ##### Example:
+
+          Input: su:mask-formatter("999999999", "+55 11 #####-####")
+          Return: +55 11 99999-9999
+
+    - #### normalize-string() 
+      **Description:** Cleans a string by removing all non-alphanumeric characters and keeping only letters and numbers.<br />
+      **Template:** normalize-string(<< string-text >>)<br />
+      **Return Type:** string
+    
+      ##### Example:
+
+          Input: su:normalize-string("a|b-c*d%e$f&g")
+          Return: abcdefg
+
+    
 ## Install
 ...
 
