@@ -244,31 +244,24 @@ By the end of this section, you should have a clear understanding of the availab
 
 ## Install
 
-1- Open a terminal and run the following command: `gh repo clone jgimenes/bw6-custom-functions`. This will clone the repository to your local machine.
+1- Open a terminal and run the following command: `gh repo clone jgimenes/bw6-custom-functions`. This will clone the repository to your local machine.<br >
+2- To import the project, open your **TIBCO BusinessStudio** Integrated Development Environment (IDE) and follow the steps below.<br/>
+3- In the IDE, select **"File"** from the menu bar and then choose **"Import"**.<br />
+4- In the **"Select an import wizard" type **"Projects from Folder or Archive"** and click **"Next"**. <br />
+5- In the **"Import Source"** field, navigate to the folder where you cloned the repository in step 1 and select it.<br />
+6- On the **"Import Source"** put the path name for clonned sources, and click in **"Finish"**.<br />
+7- You'll be able to see the project in the Project Explorer.</br />
+8- To finish the installation, choose one of the links below and follow the provided instructions.
 
-2- To import the project, open your **TIBCO BusinessStudio** Integrated Development Environment (IDE) and follow the steps below.
+[TIBCO - Using Custom XPath Function at Design Time and Run Time.](https://docs.tibco.com/pub/activematrix_businessworks/6.9.0/doc/html/Default.htm#binding-palette/using-custom-xpath-f.htm?Highlight=custom%20functions) 
 
-3- In the IDE, select **"File"** from the menu bar and then choose **"Import"**.
-  
-  [image1]
-  
-2 - In the **"Select an import wizard" type **"Projects from Folder or Archive"** and click **"Next"**. <br />
-  
-  [image2]
-  
-4- In the **"Import Source"** field, navigate to the folder where you cloned the repository in step 1 and select it.
-
-  [image3]
-
-5 - On the **"Import Source"** put the path name for clonned sources, and click in **"Finish"**.
-
-  [image]
-
-6 - You'll be able to see the project in the Project Explorer.
-
-[TIBCO](https://docs.tibco.com/pub/activematrix_businessworks/6.9.0/doc/html/Default.htm#binding-palette/using-custom-xpath-f.htm?Highlight=custom%20functions) - Using Custom XPath Function at Design Time and Run Time.
+[TIBCO - Using External Custom XPath Function with TIBCO ActiveMatrix BusinessWorks Plug-in for Maven.](https://docs.tibco.com/pub/activematrix_businessworks/6.9.0/doc/html/Default.htm#app-dev-guide/external-custom-xpath-func-with-maven.htm?Highlight=custom%20functions)
 
 ## Uninstall
+
+To uninstall it, please follow the instructions provided in the link below and select the **"Custom Functions TIBCO BusinessWorks 6/CE"** plugin when prompted."
+
+[TIBCO - Deleting Custom XPath Functions.](https://docs.tibco.com/pub/activematrix_businessworks/6.9.0/doc/html/Default.htm#binding-palette/deleting-custom-xpat.htm?Highlight=custom%20functions)
 
 ## MIT Licence
 
