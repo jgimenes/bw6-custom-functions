@@ -1,5 +1,5 @@
 <h1>Custom Functions TIBCO BusinessWorks 6/CE</h1>
-<p><img src=https://img.shields.io/badge/licence-MIT-greeen/> <img src=https://img.shields.io/badge/status-Under%20Construction-yellow/></p>
+<p><img src=https://img.shields.io/badge/licence-MIT-greeen/></p><p><img src=https://img.shields.io/badge/status-Under%20Construction-yellow/></p>
 
 <p>Custom functions are user-defined functions that allow you to extend the functionality of TIBCO BusinessWorks. These functions can be created in Java and can be used in any BusinessWorks process to perform a specific task or to manipulate data.</p>
 
