@@ -25,8 +25,6 @@ Overall, TIBCO BusinessWorks custom functions provide a flexible and powerful wa
   - [Custom String Functions Brazil](#custom-string-functions-brazil)
 - [Install](#install)
 - [Uninstall](#uninstall)
-  - [Windows & Linux](#windows-linux)
-  - [MacOS](#macos) 
 - [MIT Licence](#mit-licence)
 
 ## Functions
