@@ -8,6 +8,7 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 import com.tibco.xml.cxf.common.annotations.XPathFunction;
 import com.tibco.xml.cxf.common.annotations.XPathFunctionExample;
@@ -116,7 +117,8 @@ public class DateTimeUtils {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		formatter.setTimeZone(TimeZone.getDefault());
-		Calendar calendar = Calendar.getInstance();
+		Calendar calendar = Calendar.getInstance(Locale.getDefault());
+		calendar.setMinimalDaysInFirstWeek(7);
 		Date d = new Date();
 		try {
 			d = formatter.parse(date);
