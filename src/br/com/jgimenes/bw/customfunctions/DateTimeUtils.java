@@ -2,10 +2,13 @@ package br.com.jgimenes.bw.customfunctions;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalField;
+import java.time.temporal.WeekFields;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -37,15 +40,14 @@ public class DateTimeUtils {
 
 	@XPathFunction(helpText = "Convert Epoch time to a readable date format.", parameters = {
 			@XPathFunctionParameter(name = "timestamp", optional = false, optionalValue = "") }, displayName = "epoch-to-human-readable", returnType = "string", examples = {
-					@XPathFunctionExample(example = "epoch-to-human-readable(\"1679332277\")", returns = "2023-03-20T14:11:17.017-03:00") } 
-	)
+					@XPathFunctionExample(example = "epoch-to-human-readable(\"1679332277\")", returns = "2023-03-20T14:11:17.017-03:00") })
 
 	public static String epochToHumanReadable(String timestamp) {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sssXXX");
 		formatter.setTimeZone(TimeZone.getDefault());
 		Long epoch = Long.parseLong(timestamp);
-		Date date = new Date( timestamp.length() == 10 ? epoch * 1000 : epoch );
+		Date date = new Date(timestamp.length() == 10 ? epoch * 1000 : epoch);
 		return formatter.format(date);
 	}
 
@@ -85,7 +87,22 @@ public class DateTimeUtils {
 					@XPathFunctionExample(example = "extract-day-of-year(\"2023-12-31\")", returns = "365") })
 
 	public static int extractDayOfYear(String date) {
-		return extractFromDateOfYear("day", date);
+
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date day = null;
+		Calendar calendar = Calendar.getInstance(Locale.getDefault());
+		try {
+			day = formatter.parse(date);
+
+			calendar.setTime(day);
+
+		} catch (ParseException e) {
+
+			e.printStackTrace();
+		}
+
+		return calendar.get(Calendar.DAY_OF_YEAR);
+
 	}
 
 	/**
@@ -101,42 +118,15 @@ public class DateTimeUtils {
 					@XPathFunctionExample(example = "extract-week-of-year(\"2023-12-31\")", returns = "53") })
 
 	public static int extractWeekOfYear(String date) {
-		return extractFromDateOfYear("week", date);
-	}
 
-	/**
-	 * Retrieves the day, week or month number within a year for a given date.
-	 * 
-	 * @param query
-	 * @param date
-	 * @return integer
-	 * 
-	 */
+		WeekFields weekFields = WeekFields.of(Locale.getDefault());
+		weekFields.getFirstDayOfWeek();
+		weekFields.getMinimalDaysInFirstWeek();
+		TemporalField weekOfYear = weekFields.weekOfYear();
+		LocalDate day = LocalDate.parse(date);
 
-	private static int extractFromDateOfYear(String query, String date) {
-
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		formatter.setTimeZone(TimeZone.getDefault());
-		Calendar calendar = Calendar.getInstance(Locale.getDefault());
-		calendar.setMinimalDaysInFirstWeek(7);
-		Date d = new Date();
-		try {
-			d = formatter.parse(date);
-			calendar.setTime(d);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		int fromDateOfYear = 0;
-
-		if (query == "day") {
-			fromDateOfYear = calendar.get(Calendar.DAY_OF_YEAR);
-		} else if (query == "week") {
-			fromDateOfYear = calendar.get(Calendar.WEEK_OF_YEAR);
-		}
-
-		return fromDateOfYear;
+		return day.get(weekOfYear);
 
 	}
+
 }
