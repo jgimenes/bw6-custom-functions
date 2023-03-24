@@ -74,7 +74,7 @@ public class StringUtils {
 	 * 
 	 */
 
-	@XPathFunction(helpText = "Reverse string.", parameters = {
+	@XPathFunction(helpText = "Takes a string as an input and returns a new string with the characters in the original string reversed.", parameters = {
 			@XPathFunctionParameter(name = "string-text", optional = false, optionalValue = "") }, displayName = "string-reverse", returnType = "string", examples = {
 					@XPathFunctionExample(example = "string-reverse(\"all you need is love\")", returns = "evol si deen uoy lla") })
 
@@ -131,7 +131,7 @@ public class StringUtils {
 	@XPathFunction(helpText = "Takes a string and formats it based on a given mask.", parameters = {
 			@XPathFunctionParameter(name = "string-text", optional = false, optionalValue = ""),
 			@XPathFunctionParameter(name = "mask", optional = false, optionalValue = "") }, displayName = "mask-formatter", returnType = "string", examples = {
-					@XPathFunctionExample(example = "mask-formatter(\"999999999\", \"+55 11 #####-####\" )", returns = "+55 11 99999-9999") })
+					@XPathFunctionExample(example = "mask-formatter(\"999999999\", \"+55 11 #####-####\")", returns = "+55 11 99999-9999") })
 
 	public String maskFormatter(String stringText, String mask) {
 		return textFormatter.textFormat(stringText, mask);
