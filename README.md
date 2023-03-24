@@ -152,7 +152,7 @@ By the end of this section, you should have a clear understanding of the availab
           Return: aaac
 
     - #### string-reverse() 
-      **Description:** Reverse string.<br />
+      **Description:** Takes a string as an input and returns a new string with the characters in the original string reversed.<br />
       **Template:** string-reverse(<< string-text >>)<br />
       **Return Type:** string
     
