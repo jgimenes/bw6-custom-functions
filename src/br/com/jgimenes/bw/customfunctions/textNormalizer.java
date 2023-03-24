@@ -18,7 +18,7 @@ public class textNormalizer implements Serializable {
 
 	/**
 	 * 
-	 * Remove accents from a string..
+	 * Remove accents from a string.
 	 * 
 	 * @param stringText
 	 * @return normalized text
