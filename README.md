@@ -38,61 +38,61 @@ By the end of this section, you should have a clear understanding of the availab
   Custom-built functions for manipulating dates and times.
 
   - #### epoch-to-human-readable() 
-    **Description:** Convert Epoch time to a readable date format.<br />
-    **Template:** epoch-to-human-readable(<< timestamp >>)<br />
+    **Description:** Convert Epoch time to a readable date format.
+    **Template:** epoch-to-human-readable(<< timestamp >>)
     **Return Type:** string
     
       ##### Example:
 
-        Input: dt:epoch-to-human-readable("1679332277")<br />
+        Input: dt:epoch-to-human-readable("1679332277")
         Return: 2023-03-20T14:11:17.017-03:00
       
       ##### Example:  
       
-        Input: dt:epoch-to-human-readable(xsd:string(tib:timestamp()))<br />
+        Input: dt:epoch-to-human-readable(xsd:string(tib:timestamp()))
         Return: 2023-03-20T14:39:40.040-03:00
       
   - #### extract-day-of-year() 
-    **Description:** Retrieves the day number within a year for a given date.<br />
-    **Template:** extract-day-of-year(<< date >>)<br />
+    **Description:** Retrieves the day number within a year for a given date.
+    **Template:** extract-day-of-year(<< date >>)
     **Return Type:** integer
     
       ##### Example:
 
-        Input: dt:extract-day-of-year("2023-12-31")<br />
+        Input: dt:extract-day-of-year("2023-12-31")
         Return: 365
 
   - #### extract-week-of-year() 
-    **Description:** Retrieves the week number within a year for a given date.<br />
-    **Template:** extract-week-of-year(<< date >>)<br />
+    **Description:** Retrieves the week number within a year for a given date.
+    **Template:** extract-week-of-year(<< date >>)
     **Return Type:** integer
     
       ##### Example:
 
-        Input: dt:extract-week-of-year("2023-12-31")<br />
+        Input: dt:extract-week-of-year("2023-12-31")
         Return: 53
 
   - #### epoch-to-human-readable() 
     **Description:** Convert a readable date format to an Epoch timestamp.<br />
-    **Template:** human-readable-to-epoch(<< datetime >>)<br />
+    **Template:** human-readable-to-epoch(<< datetime >>)
     **Return Type:** string
     
       ##### Examples:
 
-        Input: dt:human-readable-to-epoch("2023-03-20T14:11:17.017-03:00")<br />
+        Input: dt:human-readable-to-epoch("2023-03-20T14:11:17.017-03:00")
         Return: 1679332277
 
       ##### Examples:
 
-        Input: dt:human-readable-to-epoch(xsd:string(current-dateTime()))<br />
+        Input: dt:human-readable-to-epoch(xsd:string(current-dateTime()))
         Return: 1679336875
 
 - ### Custom String Functions
   Custom-built functions for manipulating strings.
   
     - #### count-lines() 
-      **Description:** Obtain the line count for a given string.<br />
-      **Template:** count-lines(<< string-text >>)<br />
+      **Description:** Obtain the line count for a given string.
+      **Template:** count-lines(<< string-text >>)
       **Return Type:** integer
     
       ##### Example:
@@ -102,7 +102,7 @@ By the end of this section, you should have a clear understanding of the availab
           Return: 2
 
     - #### count-words() 
-      **Description:** Obtain the words count for a given string.<br />
+      **Description:** Obtain the words count for a given string.
       **Template:** count-words(<< string-text >>)<br />
       **Return Type:** integer
     
@@ -113,7 +113,7 @@ By the end of this section, you should have a clear understanding of the availab
 
     - #### mask-credit-card() 
       **Description:** Mask credit card number.<br />
-      **Template:** mask-credit-card(<< credit-card-number >>)<br />
+      **Template:** mask-credit-card(<< credit-card-number >>)
       **Return Type:** string
     
       ##### Example:
@@ -122,7 +122,7 @@ By the end of this section, you should have a clear understanding of the availab
           Return: 5***********5908
 
     - #### mask-formatter() 
-      **Description:** Takes a string and formats it based on a given mask.<br />
+      **Description:** Takes a string and formats it based on a given mask.
       **Template:** mask-formatter(<< string-text >>, << mask >>)<br />
       **Return Type:** string
     
@@ -132,8 +132,8 @@ By the end of this section, you should have a clear understanding of the availab
           Return: +55 11 99999-9999
 
     - #### normalize-string() 
-      **Description:** Cleans a string by removing all non-alphanumeric characters and keeping only letters and numbers.<br />
-      **Template:** normalize-string(<< string-text >>)<br />
+      **Description:** Cleans a string by removing all non-alphanumeric characters and keeping only letters and numbers.
+      **Template:** normalize-string(<< string-text >>)
       **Return Type:** string
     
       ##### Example:
@@ -142,8 +142,8 @@ By the end of this section, you should have a clear understanding of the availab
           Return: abcdefg
 
     - #### remove-accents() 
-      **Description:** Convert accented characters to non-accented characters in a string.<br />
-      **Template:** remove-accents(<< string-text >>)<br />
+      **Description:** Convert accented characters to non-accented characters in a string.
+      **Template:** remove-accents(<< string-text >>)
       **Return Type:** string
     
       ##### Example:
@@ -152,7 +152,7 @@ By the end of this section, you should have a clear understanding of the availab
           Return: aaac
 
     - #### string-reverse() 
-      **Description:** Takes a string as an input and returns a new string with the characters in the original string reversed.<br />
+      **Description:** Takes a string as an input and returns a new string with the characters in the original string reversed.
       **Template:** string-reverse(<< string-text >>)<br />
       **Return Type:** string
     
@@ -162,8 +162,8 @@ By the end of this section, you should have a clear understanding of the availab
           Return: evol si deen uoy lla
 
     - #### validade-email() 
-      **Description:** Check the validity of an email address using regular expressions.<br />
-      **Template:** validade-email(<< email >>)<br />
+      **Description:** Check the validity of an email address using regular expressions.
+      **Template:** validade-email(<< email >>)
       **Return Type:** boolean
     
       ##### Example:
@@ -180,7 +180,7 @@ By the end of this section, you should have a clear understanding of the availab
   Custom-built functions for manipulating strings - Brazil.
   
     - #### cnpj-formart() 
-      **Description:** Returns the CNPJ number in a standardized 99.999.999/9999-99 format.<br />
+      **Description:** Returns the CNPJ number in a standardized 99.999.999/9999-99 format.
       **Template:** cnpj-formart(<< CNPJ >>)<br />
       **Return Type:** string
     
@@ -190,7 +190,7 @@ By the end of this section, you should have a clear understanding of the availab
           Return: 78.408.074/0001-59
 
     - #### cpf-formart() 
-      **Description:** Returns the CPF number in a standardized 999.999.999-99 format.<br />
+      **Description:** Returns the CPF number in a standardized 999.999.999-99 format.
       **Template:** cpf-formart(<< CPF >>)<br />
       **Return Type:** string
     
@@ -200,7 +200,7 @@ By the end of this section, you should have a clear understanding of the availab
           Return: 881.070.690-05
 
     - #### cnpj-validate()
-      **Description:** Validates a Brazilian CNPJ number.<br />
+      **Description:** Validates a Brazilian CNPJ number.
       **Template:** cnpj-validate(<< CNPJ >>)<br />
       **Return Type:** boolean
     
@@ -215,7 +215,7 @@ By the end of this section, you should have a clear understanding of the availab
           Return: false
 
    - #### cpf-validate()
-      **Description:** Validates a Brazilian CPF number.<br />
+      **Description:** Validates a Brazilian CPF number.
       **Template:** cpf-validate(<< CPF >>)<br />
       **Return Type:** boolean
     
@@ -230,8 +230,8 @@ By the end of this section, you should have a clear understanding of the availab
           Return: false
 
     - #### zip-code-format() 
-      **Description:** Returns the ZIP code in a standardized 99999-999 format.<br />
-      **Template:** zip-code-format(<< zipCode >>)<br />
+      **Description:** Returns the ZIP code in a standardized 99999-999 format.
+      **Template:** zip-code-format(<< zipCode >>)
       **Return Type:** string
     
       ##### Example:
