@@ -72,7 +72,7 @@ By the end of this section, you should have a clear understanding of the availab
         Input: dt:extract-week-of-year("2023-12-31")
         Return: 53
 
-  - #### epoch-to-human-readable() 
+  - #### human-readable-to-epoch() 
     **Description:** Convert a readable date format to an Epoch timestamp.  >
     **Template:** human-readable-to-epoch(<< datetime >>)  
     **Return Type:** string  
